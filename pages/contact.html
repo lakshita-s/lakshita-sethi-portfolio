@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Lakshita Sethi</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://use.typekit.net/bgg6lhz.css">
+</head>
+
+<body class="page contact-page">
+
+  <div class="top-nav">
+    <div class="top-nav-content">
+      <a href="../index.html">Home</a>
+      <a href="./about.html">About</a>
+      <a href="selected-work.html">Selected Work</a>
+      <a href="work.html">All Work</a>
+      <a class="active" href="./contact.html">Contact</a>
+    </div>
+  </div>
+
+  <main class="contact-wrap">
+    <h1 class="contact-title">CONTACT ME</h1>
+
+<form
+  class="contact-form"
+  action="https://formspree.io/f/xdaazrnp"
+  method="POST"
+  id="contact-form"
+>
+      <div class="field">
+        <label for="name">Name <span aria-hidden="true">*</span></label>
+        <input id="name" name="name" type="text" placeholder="Your Name..." required />
+      </div>
+
+      <div class="field">
+        <label for="email">Email Address <span aria-hidden="true">*</span></label>
+        <input id="email" name="email" type="email" placeholder="Your Email Address..." required />
+      </div>
+
+      <div class="field">
+        <label for="message">Message <span aria-hidden="true">*</span></label>
+        <textarea id="message" name="message" rows="7" placeholder="Your Message..." required></textarea>
+      </div>
+
+      <button class="contact-btn" type="submit">Submit</button>
+      <input type="hidden" name="_subject" value="New message from your portfolio" />
+<input type="hidden" name="_captcha" value="false" />
+<input type="hidden" name="_template" value="table" />
+<p id="form-status" hidden>Thanks! Your message has been sent.</p>
+
+
+    </form>
+  </main>
+
+  <script>
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { Accept: "application/json" }
+    });
+
+    if (response.ok) {
+      form.reset();
+      status.hidden = false;
+      status.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+</script>
+
+</body>
+</html>

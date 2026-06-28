@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Headspace — Creative Coding</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/bgg6lhz.css">
+</head>
+
+<body class="page is-600x500">
+
+  <div class="top-nav">
+    <div class="top-nav-content">
+      <a href="../../index.html">Home</a>
+      <a href="../about.html">About</a>
+<a href="selected-work.html">Selected Work</a>
+<a href="work.html" class="active">All Work</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+  </div>
+
+  <main class="project-wrap has-sidebar">
+
+    <aside class="project-side">
+      <a class="side-title-link" href="../creative-coding.html">Creative Coding</a>
+      <nav class="side-nav">
+<a class="side-link" href="cc-experimental-camera.html">I am worth 192 points</a>
+<a class="side-link" href="cc-musical-typography.html">Musical Typography</a>
+<a class="side-link is-active" href="cc-headspace.html">Headspace</a>
+<a class="side-link" href="cc-data-portrait.html">Data Portrait "Rings"</a>
+<a class="side-link" href="cc-optical-illusion.html">Optical Illusion</a>
+<a class="side-link" href="cc-experimental-clock.html">Experimental Clock</a>
+<a class="side-link" href="cc-lost-and-found.html">Lost &amp; Found</a>
+      </nav>
+    </aside>
+
+    <section class="project-main">
+
+      <header class="project-head">
+        <p class="project-kicker">Creative Coding</p>
+        <h1 class="project-title">Headspace</h1>
+        <p class="project-meta">2025 · p5.js · HTML/CSS · Autobiographical Game</p>
+      </header>
+
+      <section class="project-embed" aria-label="Live sketch">
+        <div class="embed-frame">
+          <div class="embed-scale">
+          <iframe
+  src="https://lakshita-s.github.io/headspace/"
+  title="Headspace — p5.js sketch"
+  loading="lazy"
+  tabindex="0"
+  allow="autoplay; fullscreen"
+></iframe>
+
+          </div>
+        </div>
+
+        <p class="embed-note">Click on screen to begin.</p>
+
+        <div class="embed-actions">
+          <a class="btn" href="https://lakshita-s.github.io/headspace/" target="_blank" rel="noopener">
+            View Live Sketch ↗
+          </a>
+          <a class="btn" href="https://github.com/lakshita-s/headspace" target="_blank" rel="noopener">
+            View Code ↗
+          </a>
+        </div>
+      </section>
+
+    </section>
+
+    <aside class="project-description">
+      <div class="project-text project-text--side">
+        <p>
+          A game of search and discovery that explores recovery after a period of mental struggle and emotional numbness.
+          The player gradually uncovers their lost emotions, becoming a whole person again and rebuilding a sense of self.
+        </p>
+      </div>
+    </aside>
+
+
+    <script>
+  const frame = document.querySelector('.embed-frame iframe');
+  const embed = document.querySelector('.embed-frame');
+
+  let embedActive = false;
+
+  function setEmbedActive(on) {
+    embedActive = on;
+    document.documentElement.classList.toggle('lock-scroll', on);
+    document.body.classList.toggle('lock-scroll', on);
+    if (on && frame) frame.focus();
+  }
+
+  if (embed) {
+    // Activate when mouse enters / you click
+    embed.addEventListener('mouseenter', () => setEmbedActive(true));
+    embed.addEventListener('mouseleave', () => setEmbedActive(false));
+    embed.addEventListener('pointerdown', () => setEmbedActive(true));
+  }
+
+  // Stop scroll keys globally while embedActive
+  document.addEventListener('keydown', (e) => {
+    if (!embedActive) return;
+
+    const keys = [' ', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'PageUp', 'PageDown', 'Home', 'End'];
+    if (keys.includes(e.key)) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }, { capture: true });
+
+  // Stop wheel/trackpad scroll while embedActive
+  window.addEventListener('wheel', (e) => {
+    if (!embedActive) return;
+    e.preventDefault();
+  }, { passive: false });
+
+  // Stop touch scroll while embedActive
+  window.addEventListener('touchmove', (e) => {
+    if (!embedActive) return;
+    e.preventDefault();
+  }, { passive: false });
+</script>
+
+
+</body>
+</html>

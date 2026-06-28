@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Musical Typography — Creative Coding</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="https://use.typekit.net/bgg6lhz.css">
+</head>
+<body class="page is-square-600">
+
+<div class="top-nav">
+<div class="top-nav-content">
+<a href="../../index.html">Home</a>
+<a href="../about.html">About</a>
+<a href="selected-work.html" >Selected Work</a>
+<a href="../work.html" class="active">All Work</a>
+<a href="../contact.html">Contact</a>
+</div>
+</div>
+
+<main class="project-wrap has-sidebar">
+
+<aside class="project-side">
+
+  <div class="selected-badge">
+<a href="../selected-work.html">← In Selected Work ★</a>
+</div>
+<a class="side-title-link" href="../creative-coding.html">Creative Coding</a>
+<nav class="side-nav">
+<a class="side-link" href="cc-experimental-camera.html">I am worth 192 points</a>
+<a class="side-link is-active" href="cc-musical-typography.html">Musical Typography</a>
+<a class="side-link" href="cc-headspace.html">Headspace</a>
+<a class="side-link" href="cc-data-portrait.html">Data Portrait "Rings"</a>
+<a class="side-link" href="cc-optical-illusion.html">Optical Illusion</a>
+<a class="side-link" href="cc-experimental-clock.html">Experimental Clock</a>
+<a class="side-link" href="cc-lost-and-found.html">Lost &amp; Found</a>
+</nav>
+</aside>
+
+<section class="project-main">
+
+<header class="project-head">
+
+
+
+<p class="project-kicker">Creative Coding</p>
+<h1 class="project-title">Musical Typography</h1>
+<p class="project-meta">Febuary 2026 · p5.js · Interactive</p>
+</header>
+
+
+<section class="project-embed" aria-label="Live sketch">
+<!-- <div class="embed-frame">
+<div class="embed-scale">
+<iframe src="https://lakshita-s.github.io/everything-eats-and-is-eaten/" title="Everything eats and is eaten — p5.js sketch"></iframe>
+</div>
+</div>
+<p class="embed-note">Based on Adrienne Lenker's "Ingydar"</p>
+<div class="embed-actions">
+<a class="btn" href="https://lakshita-s.github.io/optical-illusion/" target="_blank" rel="noopener">
+View Live Sketch ↗
+</a>
+<a class="btn" href="https://github.com/lakshita-s/optical-illusion" target="_blank" rel="noopener">
+View Code ↗
+</a>
+</div> -->
+
+
+<div class="carousel-wrap">
+  <div class="carousel-slide active">
+      <p class="carousel-instruction">click canvas to play</p>
+
+    <div class="embed-frame">
+      <div class="embed-scale">
+        <iframe src="https://lakshita-s.github.io/everything-eats-and-is-eaten/"></iframe>
+      </div>
+    </div>
+    <p class="carousel-label">Ingydar - Adrienne Lenker</p>
+    <!-- <p class="carousel-instruction">click canvas to play</p> -->
+  </div>
+
+<div class="carousel-slide">
+          <p class="carousel-instruction">click to play, then move cursor around canvas</p>
+
+  <div class="embed-frame">
+    <div class="embed-scale">
+      <iframe src="https://lakshita-s.github.io/weird-fishes-arpeggi/"></iframe>
+    </div>
+  </div>
+  <p class="carousel-label">Weird Fishes - Radiohead</p>
+</div>
+
+<div class="carousel-slide">
+          <p class="carousel-instruction">click canvas to play</p>
+
+  <div class="embed-frame">
+    <div class="embed-scale">
+      <iframe src="https://lakshita-s.github.io/disorder/"></iframe>
+    </div>
+  </div>
+  <p class="carousel-label">Disorder - Joy Division</p>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const counter = document.querySelector('.carousel-counter');
+    let current = 0;
+
+    function goTo(index) {
+  // Reload the current slide's iframe to stop audio
+  const currentIframe = slides[current].querySelector('iframe');
+  if (currentIframe) {
+    currentIframe.src = currentIframe.src;
+  }
+  
+  slides[current].classList.remove('active');
+  current = (index + slides.length) % slides.length;
+  slides[current].classList.add('active');
+  counter.textContent = `${current + 1} / ${slides.length}`;
+}
+    document.getElementById('prev').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('next').addEventListener('click', () => goTo(current + 1));
+  });
+</script>
+
+
+  <div class="carousel-controls">
+    <button class="carousel-btn" id="prev">←</button>
+    <span class="carousel-counter">1 / 3</span>
+    <button class="carousel-btn" id="next">→</button>
+  </div>
+</div>
+
+</section>
+</section>
+
+<aside class="project-description">
+<div class="project-text project-text--side">
+<p>
+Interactive typography experiments using music as inspiration.
+</p>
+</div>
+</aside>
+</main>
+</body>
+</html>
