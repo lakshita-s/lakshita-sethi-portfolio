@@ -1244,22 +1244,50 @@ body.is-555x360 .project-wrap.has-sidebar {
   grid-template-columns: minmax(180px, 1fr) 760px minmax(180px, 1fr);
 }
 
-body.is-555x360 .project-main {
+/* body.is-555x360 .project-main {
   width: 760px;
 }
 body.is-555x360 .project-wrap.has-sidebar {
   grid-template-columns: 220px 760px minmax(0, 1fr);
-}
-body.is-555x360 .embed-frame,
+} */
+/* body.is-555x360 .embed-frame,
 body.is-555x360 .embed-scale,
 body.is-555x360 .embed-scale img {
   width: 760px;
   height: 493px;
+} */
+
+body.is-555x360 .embed-frame,
+body.is-555x360 .embed-scale,
+body.is-555x360 .embed-scale img
+body.is-555x360 .embed-scale video {
+  width: 555px;
+  height: 360px;
+}
+
+body.is-555x360 .embed-scale video {
+  object-fit: cover;
+  display: block;
 }
 
 body.is-555x360 .project-text {
   text-align: justify;
   text-justify: inter-word;
+}
+
+body.is-555x360 .embed-scale {
+  transform: none;
+}
+
+.embed-scale video {
+  pointer-events: auto;
+}
+
+body.is-555x360 .embed-scale video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .btn.btn-primary {
