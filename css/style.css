@@ -135,6 +135,8 @@ body:not(.home) {
   width: 250px;
   height: 250px;
   filter: drop-shadow(7px 7px 2px rgba(0, 2, 2, 0.664));
+    /* filter: drop-shadow(7px 7px 2px rgba(177, 177, 177, 0.752)); */
+
 }
 
 .pixel-label {
@@ -1259,7 +1261,7 @@ body.is-555x360 .embed-scale img {
 
 body.is-555x360 .embed-frame,
 body.is-555x360 .embed-scale,
-body.is-555x360 .embed-scale img
+body.is-555x360 .embed-scale img,
 body.is-555x360 .embed-scale video {
   width: 555px;
   height: 360px;
@@ -1337,4 +1339,181 @@ body.is-555x360 .embed-scale video {
 .selected-badge a:hover {
   opacity: 1;
   background: rgba(249, 193, 66, 0.08);
+}
+
+
+
+/* MAKING IT RESPONSIVE FOR PHONE SCREEN */
+@media (max-width: 600px) {
+
+  /* Fix project main column width */
+  .project-main {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /*makes it a bit more narrow*/
+  .project-wrap.has-sidebar {
+  padding: 20px 16px 80px;
+}
+
+  /*fix nav bar*/
+.top-nav-content {
+  gap: 16px;
+}
+.top-nav a {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+  /* Fix all embed frames */
+  .embed-frame {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+  }
+
+  .embed-scale {
+    width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+  }
+
+  .embed-scale iframe,
+  .embed-scale video,
+  .embed-scale img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
+
+  /* Fix project description side rail */
+  .project-description {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Fix project text */
+  .project-text {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  /* Fix media frames */
+  .media-frame {
+    width: 100% !important;
+  }
+
+  /* Fix sidebar */
+  .project-side {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-wrap {
+  padding: 32px 16px 60px;
+}
+
+.contact-title {
+  font-size: 18px;
+}
+
+.field input,
+.field textarea {
+  font-size: 16px; /* below 16px Safari auto-zooms on input focus */
+}
+
+body.is-555x360 .embed-frame,
+body.is-555x360 .embed-scale,
+body.is-555x360 .embed-scale video {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+  transform: none !important;
+}
+body.is-555x360 .project-wrap.has-sidebar {
+  grid-template-columns: minmax(180px, 1fr) 760px minmax(180px, 1fr);
+}
+body.is-555x360 .project-wrap.has-sidebar {
+  grid-template-columns: 1fr;
+}
+
+}
+
+.desktop-only-note {
+  display: none;
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.7;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  border: 1px solid rgba(249, 193, 66, 0.2);
+  border-radius: 18px;
+  padding: 16px 20px;
+}
+
+@media (max-width: 600px) {
+  .desktop-only-note {
+    display: block;
+  }
+}
+
+/* landing for phone */
+.mobile-landing-nav {
+  display: none;
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  z-index: 10;
+}
+
+.mobile-landing-nav a {
+  font-family: "receipt-narrow", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+/* MOBILE — show nav, hide pixel anchors */
+@media (max-width: 600px) {
+  .pixel-anchor {
+    display: none;
+  }
+
+  .mobile-landing-nav {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  #landing-content {
+    font-size: 23px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .mobile-landing-nav {
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    text-align: center;
+  }
 }
