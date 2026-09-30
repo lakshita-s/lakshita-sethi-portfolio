@@ -87,10 +87,17 @@ body:not(.home) {
 }
 
 /* Positioning */
+.pixel-cassette-anchor {
+  position: fixed;
+  left: 65%;
+  top: 5%;
+  transform: translateX(-50%);
+}
+
 .pixel-cd-anchor {
   position: fixed;
   left: 70%;
-  top: 20%;
+  top: 35%;
   transform: translateX(-50%);
 }
 
@@ -104,7 +111,7 @@ body:not(.home) {
 .pixel-phone-anchor {
   position: fixed;
   left: 80%;
-  top: 50%;
+  top: 65%;
   transform: translateX(-50%);
 }
 
@@ -176,6 +183,11 @@ body:not(.home) {
 .pixel-cd-anchor .pixel-label {
   top: 62%;
   left: 51%;
+}
+
+.pixel-cassette-anchor .pixel-label {
+  top: 53%;
+  left: 53%;
 }
 
 .pixel-journal-anchor .pixel-label {
