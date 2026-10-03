@@ -89,29 +89,29 @@ body:not(.home) {
 /* Positioning */
 .pixel-cassette-anchor {
   position: fixed;
-  left: 65%;
-  top: 5%;
+  left: 77%;
+  top: 25%;
   transform: translateX(-50%);
 }
 
 .pixel-cd-anchor {
   position: fixed;
-  left: 70%;
-  top: 35%;
+  left: 72%;
+  top: 55%;
   transform: translateX(-50%);
 }
 
 .pixel-journal-anchor {
   position: fixed;
-  left: 4%;
-  top: 40%;
+  left: 3%;
+  top: 12%;
   transform: translateX(-50%);
 }
 
 .pixel-phone-anchor {
   position: fixed;
-  left: 80%;
-  top: 65%;
+  left: 10%;
+  top: 40%;
   transform: translateX(-50%);
 }
 
@@ -119,10 +119,6 @@ body:not(.home) {
 .pixel-anchor {
   animation: sway 3s ease-in-out infinite;
 }
-/* 
-.pixel-cd-anchor     { animation-delay: 0s; }
-.pixel-phone-anchor  { animation-delay: 0.8s; }
-.pixel-journal-anchor { animation-delay: 1.6s; } */
 
 .pixel-anchor:hover {
   animation: swayHover 3s ease-in-out infinite;
@@ -195,7 +191,7 @@ body:not(.home) {
 }
 
 .pixel-phone-anchor .pixel-label {
-  left: 54%;
+  left: 51%;
 }
 
 /* ===== PIXEL ME WALKING ===== */
